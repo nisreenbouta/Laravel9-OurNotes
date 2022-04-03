@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//1-do something in route
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+//2- call view in route
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+//3- call controller function
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//4- route->controller->view
+Route::get('/test', [HomeController::class, 'test'])->name('test');
+
+//5- route with parameters
+Route::get('/param/{id}/{number}',[HomeController::class, 'param'])->name('param');
+
+//6- route with post
+Route::post('/save',[HomeController::class, 'save'])->name('save');
+
+Route::get('/index', 'HomeController@index')->name('index');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+//**************ADMIN PANEL ROUTES**************
+Route::get('/admin', [AdminHomeController::class, 'index'])->name('admin');
