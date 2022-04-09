@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
+
             $table->id();
             $table->foreignId('parent_id');
             $table->string('title');
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('status', length: 6);
             $table->timestamps();
+
         });
     }
 

@@ -42,11 +42,11 @@ class Categorycontroller extends Controller
         $data = new Category();
         $data->parent_id =0;
         $data->title = $request->title;
-        $data->Keywords = $request->Keywords;
+        $data->keyword = $request->keyword;
         $data->description = $request->description;
         $data->status = $request->status;
         $data->save();
-
+        return redirect('admin/category');
     }
 
     /**

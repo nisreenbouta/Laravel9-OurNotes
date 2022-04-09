@@ -30,8 +30,8 @@
                                             <p class="help-block">Help text here.</p>
                                         </div>
                                         <div class="form-group">
-                                            <label>Keywords</label>
-                                            <input type="text" class="form-control" name="Keywords" placeholder="Keywords">
+                                            <label>Keyword</label>
+                                            <input type="text" class="form-control" name="keyword" placeholder="keyword">
                                             <p class="help-block">Help text here.</p>
                                         </div>
                                         <div class="form-group">
@@ -48,10 +48,12 @@
 
                                         <div class="form-group">
                                             <label>Select </label>
-                                            <select class="form-control" name="Status">
-                                                <option>True</option>
-                                                <option>False</option>
-                                            </select>
+                                            <label>
+                                                <select class="form-control" name="status">
+                                                    <option>True</option>
+                                                    <option>False</option>
+                                                </select>
+                                            </label>
                                         </div>
 
                                         <button type="submit" class="btn btn-default">Submit Button</button>
