@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>Category Elemnts</h3>
-                                    <form role="form" action="/admin/category/store" method="post">
+                                    <form role="form" action="{{route('admin.category.create')}}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label>Title</label>

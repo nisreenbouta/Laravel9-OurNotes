@@ -7,52 +7,53 @@
 
 
             <li>
-                <a  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+            <li class="nav-item">
+                <a  href="/admin"style="padding-left:25px"><i class="fa fa-home fa-2x text-danger"></i> Dashboard</a>
             </li>
             <li>
-                <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
-            </li>
-            <li>
-                <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
-            </li>
-            <li  >
-                <a  href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
-            </li>
-            <li  >
-                <a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
-            </li>
-            <li  >
-                <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
-            </li>
-
-
-            <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-pencil fa-2x text-warning"></i> Activites<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">New Notes</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Link</a>
+                        <a href="#">Accepted Notes</a>
                     </li>
-                    <li>
-                        <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Link</a>
-                            </li>
 
                         </ul>
 
                     </li>
                 </ul>
             </li>
+        <br>
+        <li class="nav-item">
+        <a  href="/admin/category"style="padding-left:25px"><i class="fa fa-list fa-2x text-info"></i> Categories</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/product"style="padding-left:25px"><i class="fa fa-shopping-cart fa-2x text-warning"></i> Elements</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/comment"style="padding-left:25px"><i class="fa fa-comment fa-2x text-success"></i> Comments</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/faq"style="padding-left:25px"><i class="fa fa-question fa-2x text-danger"></i> FAQ</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/messages"style="padding-left:25px"><i class="fa fa-envelope fa-2x text-warning"></i> Messages</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/social"style="padding-left:25px"><i class="fa fa-globe fa-2x "></i> Social</a>
+        </li><br>
+        <li class="nav-item">
+        <a  href="/admin/user"style="padding-left:25px"><i class="fa fa-user fa-2x text-success"></i> Users</a>
+        </li><br>
+<br>
+        <li class="nav-header">LABELS</li><br>
+        <li class="nav-item">
+            <a href="/admin/setting" style="padding-left:25px"class="nav-link"><i class="fa fa-gear fa-2x text-danger"> </i> Settings</a>
+
+        </li>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         </ul>
 
@@ -60,3 +61,4 @@
 
 </nav>
 <!-- /. NAV SIDE  -->
+

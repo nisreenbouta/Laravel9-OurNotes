@@ -4,17 +4,19 @@
 
 @section('content')
 
-    <li>
 
-        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Category List</a>
-
-    </li>
 
     <div id="page-wrapper" >
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
+            <li class="breadcrumb-item active">Show Category</li>
+        </ol>
+
+        <a href="{{route('admin.category.create')}}"class="btn btn-info ">Add Category</a>
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Category List</h2>
+
                     <div class="panel panel-default">
                         <div class="panel-heading"> Category List</div>
                         <div class="panel-body">
@@ -42,9 +44,10 @@
                                         <td>{{$rs->description}}</td>
                                         <td>{{$rs->image}}</td>
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="/admin/category/edit/{{$rs->id}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-info btn-sm">Edit</a></td>
-                                        <td><a href="/admin/category/delete/{{$rs->id}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-danger btn-sm">Delete</a></td>
-                                        <td><a href="/admin/category/show/{{$rs->id}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-success btn-sm">Show</a></td>
+                                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-info btn-sm">Edit</a></td>
+                                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
+
+                                        <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-success btn-sm">Show</a></td>
                                     </tr>
                                     @endforeach
                                     </tbody>

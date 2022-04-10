@@ -4,9 +4,7 @@
 
 @section('content')
 
-    <li  >
-        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Edit Category</a>
-    </li>
+
 
     <div id="page-wrapper" >
         <div id="page-inner">
@@ -22,7 +20,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>Category Elemnts</h3>
-                                    <form role="form" action="/admin/category/update/{{$data->id}}" method="post">
+                                    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label>Title</label>
