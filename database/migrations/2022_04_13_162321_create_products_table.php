@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -13,17 +14,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
 
+        if(Schema::hasTable('products')) return;
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id');
+            $table->foreignId('category_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->string('title');
             $table->string('keyword')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('status', 6);
+            $table->text('detail')->nullable();
+            $table->float('price')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('minquantity')->nullable();
+            $table->integer('tax')->nullable();
+            $table->string('status', 6)->default('False');
             $table->timestamps();
-
         });
     }
 
@@ -34,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('products');
     }
 };
