@@ -4,9 +4,7 @@
 
 @section('content')
 
-    <li  >
-        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-    </li>
+
 
     <div id="page-wrapper" >
         <div id="page-inner">

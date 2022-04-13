@@ -9,7 +9,7 @@
     <div id="page-wrapper" >
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
-            <li class="breadcrumb-item active">Show Category</li>
+            <li class="breadcrumb-item active">Category List</li>
         </ol>
 
         <a href="{{route('admin.category.create')}}"class="btn btn-info ">Add Category</a>
@@ -25,9 +25,8 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
+                                        <th>Parent</th>
                                         <th>Title</th>
-                                        <th>Keyword</th>
-                                        <th>Description</th>
                                         <th>Image</th>
                                         <th>Status</th>
                                         <th style="width: 40px">Edit</th>
@@ -39,10 +38,13 @@
                                     @foreach( $data as $rs)
                                     <tr class="success">
                                         <td>{{$rs->id}}</td>
+                                        <td>{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs, $rs->title)}}</td>
                                         <td>{{$rs->title}}</td>
-                                        <td>{{$rs->keyword}}</td>
-                                        <td>{{$rs->description}}</td>
-                                        <td>{{$rs->image}}</td>
+                                        <td>
+                                            @if($rs->image)
+                                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                            @endif
+                                        </td>
                                         <td>{{$rs->status}}</td>
                                         <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-info btn-sm">Edit</a></td>
                                         <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>

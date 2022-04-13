@@ -4,11 +4,12 @@
 
 @section('content')
 
-    <li  >
-        <a class="active-menu"  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Add Category</a>
-    </li>
 
     <div id="page-wrapper" >
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
+            <li class="breadcrumb-item active">Add Category</li>
+        </ol>
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
@@ -22,9 +23,19 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>Category Elemnts</h3>
-                                    <form role="form" action="{{route('admin.category.create')}}" method="post">
+                                    <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
+                                            <label>Parent Category</label>
+                                            <select class="form-control select2" name="parent_id" style="...">
+                                                <option value="0" selected="selected">Main Category</option>
+                                                @foreach($data as $rs)
+                                                    <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs, $rs->title)}}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                            <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" class="form-control" name="title" placeholder="Title">
                                             <p class="help-block">Help text here.</p>

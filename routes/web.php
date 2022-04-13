@@ -40,6 +40,7 @@ Route::post('/save',[HomeController::class, 'save'])->name('save');
 Route::get('/index', 'HomeController@index')->name('index');
 
 Route::middleware([
+
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -55,7 +56,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     //**************ADMIN CATEGORY ROUTES**************
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
-        Route::get('/', ['index'])->name('index');
+        Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');
