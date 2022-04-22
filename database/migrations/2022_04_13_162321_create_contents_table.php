@@ -15,8 +15,8 @@ return new class extends Migration
     public function up()
     {
 
-        if(Schema::hasTable('products')) return;
-        Schema::create('products', function (Blueprint $table) {
+        if(Schema::hasTable('contents')) return;
+        Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->nullable();
             $table->foreignId('user_id')->nullable();
@@ -25,10 +25,6 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('image')->nullable();
             $table->text('detail')->nullable();
-            $table->float('price')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->integer('minquantity')->nullable();
-            $table->integer('tax')->nullable();
             $table->string('status', 6)->default('False');
             $table->timestamps();
         });
@@ -41,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('contents');
     }
 };

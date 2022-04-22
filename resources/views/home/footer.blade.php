@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <img src="assets/images/logo.jpg" class="logo-image">
+                <img src="assets/images/logo.png" class="logo-image">
                 <p>
                 <address>
                     Karabük,Turkey
@@ -54,7 +54,7 @@
         </div>
 
         <p class="text-center">
-            &copy; 2021 all rights reserved
+            &copy; 2022 all rights reserved
         </p>
     </div>
 </div>

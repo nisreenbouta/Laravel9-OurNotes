@@ -4,11 +4,11 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class AdminProductcontroller extends Controller
+class AdminContentcontroller extends Controller
 {
 
     /**
@@ -19,8 +19,8 @@ class AdminProductcontroller extends Controller
     public function index()
     {
         //
-        $data= Product::all();
-        return view('admin.product.index', [
+        $data= Content::all();
+        return view('admin.content.index', [
             'data'=> $data
         ]);
     }
@@ -34,7 +34,7 @@ class AdminProductcontroller extends Controller
     {
         //
         $data= Category::all();
-        return view('admin.product.create', [
+        return view('admin.content.create', [
             'data'=> $data
         ]);
 
@@ -49,36 +49,32 @@ class AdminProductcontroller extends Controller
     public function store(Request $request)
     {
         //
-        $data = new Product();
+        $data = new Content();
         $data->category_id =$request->category_id;
         $data->user_id =0;//$request->category_id;
         $data->title = $request->title;
         $data->keyword = $request->keyword;
         $data->description = $request->description;
         $data->detail = $request->detail;
-        $data->price = $request->price;
-        $data->quantity = $request->quantity;
-        $data->minquantity = $request->minquantity;
-        $data->tax = $request->tax;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('image');
         }
         $data->save();
-        return redirect('admin/product');
+        return redirect('admin/content');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product,$id)
+    public function show(Content $content, $id)
     {
         //
-        $data= Product::find($id);
-        return view('admin.product.show', [
+        $data= Content::find($id);
+        return view('admin.content.show', [
             'data'=> $data
         ]);
 
@@ -87,15 +83,15 @@ class AdminProductcontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product,$id)
+    public function edit(Content $content, $id)
     {
         //
-        $data= Product::find($id);
+        $data= Content::find($id);
         $datalist= Category::all();
-        return view('admin.product.edit', [
+        return view('admin.content.edit', [
             'data'=> $data,
             'datalist'=> $datalist
         ]);
@@ -105,48 +101,44 @@ class AdminProductcontroller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product,$id)
+    public function update(Request $request, Content $content, $id)
     {
         //
-        $data= Product::find($id);
+        $data= Content::find($id);
         $data->category_id =$request->category_id;
         $data->user_id =0;//$request->category_id;
         $data->title = $request->title;
         $data->keyword = $request->keyword;
         $data->description = $request->description;
         $data->detail = $request->detail;
-        $data->price = $request->price;
-        $data->quantity = $request->quantity;
-        $data->minquantity = $request->minquantity;
-        $data->tax = $request->tax;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('image');
         }
         $data->save();
-        return redirect('admin/product');
+        return redirect('admin/content');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product,$id)
+    public function destroy(Content $content, $id)
     {
         //
-        $data= Product::find($id);
+        $data= Content::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
 
         }
         $data->delete();
-        return redirect('admin/product');
+        return redirect('admin/content');
 
     }
 }

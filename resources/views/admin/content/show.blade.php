@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Product : '. $data->title )
+@section('title', 'Show Content : '. $data->title )
 
 @section('content')
 
@@ -10,15 +10,15 @@
 
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
-            <li class="breadcrumb-item active">Show Product</li>
+            <li class="breadcrumb-item active">Show Content</li>
         </ol>
 
         <div id="page-inner">
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('admin.product.edit',['id'=>$data->id])}}"class="btn btn-info ">Edit</a>
-                    <a href="{{route('admin.product.destroy',['id'=>$data->id])}}"onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a>
+                    <a href="{{route('admin.content.edit',['id'=>$data->id])}}"class="btn btn-info ">Edit</a>
+                    <a href="{{route('admin.content.destroy',['id'=>$data->id])}}"onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a>
 
                     <div class="panel panel-default">
 
@@ -53,22 +53,7 @@
                                                         <th>Description</th>
                                                         <td>{{$data->description}}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <th>Price</th>
-                                                        <td>{{$data->price}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Quantity</th>
-                                                        <td>{{$data->quantity}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Minimum quantity</th>
-                                                        <td>{{$data->minquantity}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Tax</th>
-                                                        <td>{{$data->tax}}</td>
-                                                    </tr>
+
                                                     <tr>
                                                         <th>Detail INFO</th>
                                                         <td>{{$data->detail}}</td>

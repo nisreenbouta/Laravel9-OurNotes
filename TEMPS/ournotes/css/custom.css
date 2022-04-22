@@ -76,7 +76,7 @@ img.d-block.w-100 {
 }
 .top-body {
 	text-align: center;
-    background: linear-gradient(#0b7bce, #fff);
+    background: linear-gradient(#ef74c1, #fff);
     padding-top: 50px!important;
     padding-bottom: 50px!important;
 }
@@ -85,13 +85,13 @@ img.d-block.w-100 {
     font-weight: 700;
 }
 .single-top-link {
-    border: 2px solid #007bff;
+    border: 2px solid #e591c6;
     border-radius: 0px;
     transition: .5s;
 }
 .single-top-link:hover {
     border: 2px solid #fff;
-    background: #007bff;
+    background: #ef74c1;
     color: #fff;
     cursor: pointer;
 }

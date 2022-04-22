@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Product: '. $data->title )
+@section('title', 'Edit Category: '. $data->title )
 
 @section('content')
 
@@ -9,12 +9,12 @@
     <div id="page-wrapper" >
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
-            <li class="breadcrumb-item active">Edit Product</li>
+            <li class="breadcrumb-item active">Edit Category</li>
         </ol>
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Edit Product: {{$data->title}} </h2>
+                    <h2>Edit Category: {{$data->title}} </h2>
                     <div class="panel panel-default">
                         <div class="panel-heading"style="background-color:red">
 
@@ -23,14 +23,15 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h3>Product Elemnts</h3>
-                                    <form role="form" action="{{route('admin.product.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                                    <h3>Category Elemnts</h3>
+                                    <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <label>Parent Category</label>
-                                            <select class="form-control select2" name="category_id" style="...">
+                                            <select class="form-control select2" name="parent_id" style="...">
+                                                <option value="0" selected="selected">Main Category</option>
                                                 @foreach($datalist as $rs)
-                                                    <option value="{{$rs->id}}" @if ($rs->id ==$data->category_id) selected="selected" @endif>
+                                                    <option value="{{$rs->id}}" @if ($rs->id ==$data->parent_id) selected="selected" @endif>
                                                         {{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs, $rs->title)}}</option>
                                                 @endforeach
                                             </select>
@@ -51,31 +52,7 @@
                                             <input type="text" class="form-control" name="description" value="{{$data->description}}">
                                             <p class="help-block">Help text here.</p>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Price </label>
-                                            <input type="number" class="form-control" name="price" value="{{$data->price}}">
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Quantity </label>
-                                            <input type="number" class="form-control" name="quantity" value="{{$data->quantity}}">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label> Minimum Quantity </label>
-                                            <input type="number" class="form-control" name="minquantity" value="{{$data->minquantity}}">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tax % </label>
-                                            <input type="number" class="form-control" name="tax" value="{{$data->tax}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Detail INFO</label>
-                                            <textarea class="form-control" name="detail">
-                                                {{$data->detail}}
-                                            </textarea>
-                                        </div>
 
                                         <div class="form-group">
                                             <label>Choose Image file</label>

@@ -30,7 +30,7 @@
         <a  href="/admin/category"style="padding-left:25px"><i class="fa fa-list fa-2x text-info"></i> Categories</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/product"style="padding-left:25px"><i class="fa fa-shopping-cart fa-2x text-warning"></i> Elements</a>
+        <a  href="/admin/content"style="padding-left:25px"><i class="fa fa-shopping-cart fa-2x text-warning"></i> Content</a>
         </li><br>
         <li class="nav-item">
         <a  href="/admin/comment"style="padding-left:25px"><i class="fa fa-comment fa-2x text-success"></i> Comments</a>

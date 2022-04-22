@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminPanel\AdminProductcontroller;
+use App\Http\Controllers\AdminPanel\AdminContentcontroller;
+use App\Http\Controllers\AdminPanel\Imagecontroller;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -66,8 +67,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/show/{id}', 'show')->name('show');
         });
 
-    //**************ADMIN PRODUCT ROUTES**************
-    Route::prefix('/product')->name('product.')->controller(AdminProductcontroller::class)->group(function () {
+    //**************ADMIN CONTENT ROUTES**************
+    Route::prefix('/content')->name('content.')->controller(AdminContentcontroller::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store','store')->name('store');
@@ -76,5 +77,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/destroy/{id}','destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
     });
+
+
+    //**************ADMIN CONTENT IMAGE GALLERY ROUTES**************
+    Route::prefix('/image')->name('image.')->controller(Imagecontroller::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::get('/create/{pid}', 'create')->name('create');
+        Route::post('/store/{pid}','store')->name('store');
+        Route::post('/update/{pid}/{id}','update')->name('update');
+        Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
+
     });
+});
 

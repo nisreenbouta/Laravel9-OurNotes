@@ -64,19 +64,19 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Note Title/Description</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Book Title/Description">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Note Title/Description">
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Owner</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Book Author">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Note Writer">
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Publication</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Book Publication">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Note Publication">
                         </div>
                     </div>
                     <div class="col-md-3">
