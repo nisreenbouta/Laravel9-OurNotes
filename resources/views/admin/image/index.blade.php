@@ -1,11 +1,37 @@
 
+@extends('layouts.adminwindow')
+
+@section('title', 'Content Image Gallery ')
+
+@section('content')
+
+<h3>{{$content->title}}</h3>
+<hr>
+    <form role="form" action="{{route('admin.image.store',['pid'=>$content->id])}}" method="post" enctype="multipart/form-data">
+        @csrf
+
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Title">
+            <label>File input</label>
+            <input type="file" name="image">
+        </div>
+
+        <div class="form-group">
+            <label>Choose Image file</label>
+            <input type="file" class="custom-file-input" name="image">
+        </div>
+        <input class="input-group-text" type="submit" value="Upload">
+
+
+    </form>
+
+
 
     <div id="page-wrapper" >
-
                 <div class="col-md-12">
-
                     <div class="panel panel-default">
-                        <div class="panel-heading"> Content Image List</div>
+                        <div class="panel-heading"> Content Image Gallery</div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
@@ -14,23 +40,20 @@
                                         <th>Id</th>
                                         <th>Title</th>
                                         <th>Image</th>
-                                        <th style="width: 40px">Update</th>
                                         <th style="width: 40px">Delete</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach( $data as $rs)
+                                    @foreach( $images as $rs)
                                     <tr class="success">
                                         <td>{{$rs->id}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>
                                             @if($rs->image)
-                                            <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                                            <img src="{{Storage::url($rs->image)}}" style="height: 100px">
                                             @endif
                                         </td>
-                                        <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"<a href="https://www.free-css.com/free-css-templates" class="btn btn-info btn-sm">Edit</a></td>
-                                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"
+                                        <td><a href="{{route('admin.image.destroy',['pid'=>$content->id, 'id'=>$rs->id])}}">
                                             <a href="https://www.free-css.com/free-css-templates" onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
 
                                     </tr>
@@ -50,3 +73,4 @@
     </div>
     <!-- /. PAGE WRAPPER  -->
 
+@endsection

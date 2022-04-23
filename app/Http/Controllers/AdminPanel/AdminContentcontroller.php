@@ -22,6 +22,7 @@ class AdminContentcontroller extends Controller
         $data= Content::all();
         return view('admin.content.index', [
             'data'=> $data
+
         ]);
     }
 

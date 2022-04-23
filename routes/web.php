@@ -82,9 +82,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     //**************ADMIN CONTENT IMAGE GALLERY ROUTES**************
     Route::prefix('/image')->name('image.')->controller(Imagecontroller::class)->group(function () {
         Route::get('/{pid}', 'index')->name('index');
-        Route::get('/create/{pid}', 'create')->name('create');
         Route::post('/store/{pid}','store')->name('store');
-        Route::post('/update/{pid}/{id}','update')->name('update');
         Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
 
     });
