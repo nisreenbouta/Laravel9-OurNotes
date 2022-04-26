@@ -22,6 +22,7 @@ class Categorycontroller extends Controller
         $parent = Category::find($category->parent_id);
         $title = $parent->title . ' > ' . $title;
         return Categorycontroller::getParentsTree($parent, $title);
+
     }
 
 
@@ -33,6 +34,7 @@ class Categorycontroller extends Controller
     public function index()
     {
         //
+
         $data= Category::all();
         return view('admin.category.index', [
             'data'=> $data
@@ -64,7 +66,7 @@ class Categorycontroller extends Controller
     {
         //
         $data = new Category();
-        $data->parent_id =$request->parent_id;
+        $data->parent_id =0;//$request->parent_id;
         $data->title = $request->title;
         $data->keyword = $request->keyword;
         $data->description = $request->description;
@@ -103,9 +105,10 @@ class Categorycontroller extends Controller
         //
         $data= Category::find($id);
         $datalist= Category::all();
+
         return view('admin.category.edit', [
             'data'=> $data,
-            'datalist'=> $datalist
+           'datalist'=> $datalist
         ]);
     }
 
@@ -120,7 +123,7 @@ class Categorycontroller extends Controller
     {
         //
         $data= Category::find($id);
-        $data->parent_id =$request->parent_id;
+        $data->parent_id =0;//$request->parent_id;
         $data->title = $request->title;
         $data->keyword = $request->keyword;
         $data->description = $request->description;

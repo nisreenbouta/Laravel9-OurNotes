@@ -17,7 +17,7 @@ body{
     padding: 3px;
 }
 .bg-dark {
-    background-color: #ef89c3 !important;
+    background-color: #f5a2d8 !important;
 }
 .top-header-link {
     color: #fff!important;
@@ -72,11 +72,11 @@ img.d-block.w-100 {
     padding: 10px 30px;
     font-size: 20px;
     font-weight: 400;
-    border: 2px solid #fff;
+    border: 2px solid #FFFFFF;
 }
 .top-body {
 	text-align: center;
-    background: linear-gradient(#ef89c3, #fff);
+    background: linear-gradient(#ffffff, #fff);
     padding-top: 50px!important;
     padding-bottom: 50px!important;
 }

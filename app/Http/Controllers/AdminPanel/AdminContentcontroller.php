@@ -34,6 +34,7 @@ class AdminContentcontroller extends Controller
     public function create()
     {
         //
+
         $data= Category::all();
         return view('admin.content.create', [
             'data'=> $data
@@ -50,6 +51,7 @@ class AdminContentcontroller extends Controller
     public function store(Request $request)
     {
         //
+
         $data = new Content();
         $data->category_id =$request->category_id;
         $data->user_id =0;//$request->category_id;
@@ -74,6 +76,7 @@ class AdminContentcontroller extends Controller
     public function show(Content $content, $id)
     {
         //
+
         $data= Content::find($id);
         return view('admin.content.show', [
             'data'=> $data
@@ -90,6 +93,7 @@ class AdminContentcontroller extends Controller
     public function edit(Content $content, $id)
     {
         //
+
         $data= Content::find($id);
         $datalist= Category::all();
         return view('admin.content.edit', [
@@ -108,6 +112,7 @@ class AdminContentcontroller extends Controller
     public function update(Request $request, Content $content, $id)
     {
         //
+
         $data= Content::find($id);
         $data->category_id =$request->category_id;
         $data->user_id =0;//$request->category_id;

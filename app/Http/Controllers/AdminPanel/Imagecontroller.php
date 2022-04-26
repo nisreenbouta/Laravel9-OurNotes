@@ -39,7 +39,7 @@ class Imagecontroller extends Controller
     public function store(Request $request, $pid)
     {
         $data = new Image();
-        $data->content_id =$pid;
+        $data->content_id = $pid;
         $data->title = $request->title;
         if($request->file('image')){
             $data->image= $request->file('image')->store('image');
@@ -90,6 +90,7 @@ class Imagecontroller extends Controller
      */
     public function destroy($pid, $id)
     {
+
         $data= Image::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);

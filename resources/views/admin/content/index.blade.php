@@ -39,7 +39,7 @@
                                     @foreach( $data as $rs)
                                     <tr class="success">
                                         <td>{{$rs->id}}</td>
-                                        <td>{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs->category, $rs->category->title)}}</td>
+                                        <td>{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs->category, $rs->category->title?? 'no title')}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>
                                             @if($rs->image)
@@ -48,17 +48,18 @@
 
                                         </td>
                                         <td>
-                                            <a href="{{route('admin.image.index',['id'=>$rs->id])}}"
-                                            onclick="return !window.open(this.href, '', 'top=50 left=100 width=1100, height=700')">
+                                            <a href="{{route('admin.image.index',['pid'=>$rs->id])}}"
+                                            onclick="return !window.open(this.href, ' ', 'top=50 left=100 width=1000, height=700')">
                                             <img src="{{asset('adminassets')}}/img/gallery.jpg" style="height: 40px">
                                             </a>
                                         </td>
 
                                         <td>{{$rs->status}}</td>
-                                        <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}"></a><a href="https://www.free-css.com/free-css-templates" class="btn btn-info btn-sm">Edit</a></td>
-                                        <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}"></a><a href="https://www.free-css.com/free-css-templates" onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
+                                        <td><a href="{{route('admin.content.edit',['id'=>$rs->id])}}"<a class="btn btn-info btn-sm">Edit</a></td>
 
-                                        <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}"></a><a href="https://www.free-css.com/free-css-templates" class="btn btn-success btn-sm">Show</a></td>
+                                        <td><a href="{{route('admin.content.destroy',['id'=>$rs->id])}}"<a onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
+
+                                        <td><a href="{{route('admin.content.show',['id'=>$rs->id])}}"<a class="btn btn-success btn-sm">Show</a></td>
                                     </tr>
                                     @endforeach
                                     </tbody>

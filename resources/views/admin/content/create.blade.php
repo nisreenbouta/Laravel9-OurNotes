@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Content ')
-
+@section('head')
+    <script src="assets/js/summernote.js"></script>
+@endsection
 @section('content')
 
 
