@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +10,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home.index');
+        $sliderdata=Content::all()->limit(4);
+        return view('home.index',[
+            'sliderdata'=>$sliderdata
+        ]);
     }
 
     public function test()

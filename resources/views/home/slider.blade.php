@@ -6,9 +6,11 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+
+        @foreach($sliderdata as $rs)
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('assets')}}/images/sliders/slider1.jpg" class="d-block w-100">
+                <img src="{{Storage::('assets')}}/images/sliders/slider1.jpg" class="d-block w-100">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Welcome to your Note Sharing Platform</h3>
                     <p>
@@ -18,6 +20,7 @@
                     </p>
                 </div>
             </div>
+            @endforeach
             <div class="carousel-item">
                 <img src="{{asset('assets')}}/images/sliders/slider2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">

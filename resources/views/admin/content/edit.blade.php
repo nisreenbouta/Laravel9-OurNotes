@@ -1,7 +1,12 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Content: '. $data->title )
+@section('head')
 
+    <!-- include summernote css/js -->
+    <link href="{{asset('assets/css/summernote.css')}}" rel="stylesheet">
+    <script src="{{asset('assets/js/summernote.js')}}"></script>
+@endsection
 @section('content')
 
 
@@ -53,9 +58,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Detail INFO</label>
-                                            <textarea class="form-control" name="detail">
+                                            <textarea class="form-control"  name="detail">
                                                 {{$data->detail}}
                                             </textarea>
+
                                         </div>
 
                                         <div class="form-group">
@@ -96,3 +102,14 @@
     <!-- /. PAGE WRAPPER  -->
 
 @endsection
+@section('foot')
+                <script src="{{asset('assets/js/summernote.js')}}"></script>
+
+                <script>
+                    $(function (){
+                        //summernote
+                        $('.textarea').summernote();
+                    })
+                </script>
+@endsection
+

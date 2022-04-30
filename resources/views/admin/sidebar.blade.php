@@ -8,10 +8,20 @@
 
             <li>
             <li class="nav-item">
-                <a  href="/admin"style="padding-left:25px"><i class="fa fa-home fa-2x text-danger"></i> Dashboard</a>
+                <a  href="/admin"style="padding-left:25px"><lord-icon
+                        src="https://cdn.lordicon.com/etqbfrgp.json"
+                        trigger="loop"
+                        style="width:40px;height:40px">
+                    </lord-icon> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-pencil fa-2x text-warning"></i> Activites<span class="fa arrow"></span></a>
+                <a href="#"><script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/hbwqfgcf.json"
+                        trigger="loop"
+                        colors="outline:#ffffff,primary:#e83a30,secondary:#ffc738,tertiary:#4bb3fd"
+                        style="width:40px;height:40px">
+                    </lord-icon> Activites<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="#">New Notes</a>
@@ -27,30 +37,71 @@
             </li>
         <br>
         <li class="nav-item">
-        <a  href="/admin/category"style="padding-left:25px"><i class="fa fa-list fa-2x text-info"></i> Categories</a>
+        <a  href="/admin/category"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/dimghest.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#e83a30,secondary:#ebe6ef"
+                style="width:40px;height:40px">
+            </lord-icon> Categories</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/content"style="padding-left:25px"><i class="fa fa-shopping-cart fa-2x text-warning"></i> Content</a>
+        <a  href="/admin/content"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/gowvgfsi.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#4bb3fd,secondary:#ffc738,tertiary:#ebe6ef"
+                style="width:40px;height:40px">
+            </lord-icon> Content</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/comment"style="padding-left:25px"><i class="fa fa-comment fa-2x text-success"></i> Comments</a>
+        <a  href="/admin/comment"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/kjkiqtxg.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#e4e4e4,secondary:#4bb3fd,tertiary:#fad3d1"
+                style="width:40px;height:40px">
+            </lord-icon>
+            Comments</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/faq"style="padding-left:25px"><i class="fa fa-question fa-2x text-danger"></i> FAQ</a>
+        <a  href="/admin/faq"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/ccwgfhfg.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#92140c,secondary:#4bb3fd,tertiary:#ffffff"
+                style="width:40px;height:40px">
+            </lord-icon>FAQ</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/messages"style="padding-left:25px"><i class="fa fa-envelope fa-2x text-warning"></i> Messages</a>
+        <a  href="/admin/messages"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/gzmgulpl.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#ee6d66,secondary:#ebe6ef"
+                style="width:40px;height:40px">
+            </lord-icon> Messages</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/social"style="padding-left:25px"><i class="fa fa-globe fa-2x "></i> Social</a>
+        <a  href="/admin/social"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/zeabctil.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#4bb3fd,secondary:#ebe6ef"
+                style="width:40px;height:40px">
+            </lord-icon> Social</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/user"style="padding-left:25px"><i class="fa fa-user fa-2x text-success"></i> Users</a>
+        <a  href="/admin/user"style="padding-left:25px"><lord-icon
+                src="https://cdn.lordicon.com/vtovymqf.json"
+                trigger="loop"
+                colors="outline:#ffffff,primary:#b26836,secondary:#4bb3fd,tertiary:#f9c9c0"
+                style="width:40px;height:40px">
+            </lord-icon> Users</a>
         </li><br>
 <br>
-        <li class="nav-header">LABELS</li><br>
+
         <li class="nav-item">
-            <a href="/admin/setting" style="padding-left:25px"class="nav-link"><i class="fa fa-gear fa-2x text-danger"> </i> Settings</a>
+            <a href="/admin/setting" style="padding-left:25px"class="nav-link"><lord-icon
+                    src="https://cdn.lordicon.com/oncyjozz.json"
+                    trigger="loop"
+                    colors="outline:#ffffff,primary:#e4e4e4"
+                    style="width:40px;height:40px">
+                </lord-icon> Settings</a>
 
         </li>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
