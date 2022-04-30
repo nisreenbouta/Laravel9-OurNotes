@@ -27,6 +27,7 @@
                                         <th>Id</th>
                                         <th>Category</th>
                                         <th>Title</th>
+                                        <th>File</th>
                                         <th>Image </th>
                                         <th>Image Gallery</th>
                                         <th>Status</th>
@@ -41,6 +42,12 @@
                                         <td>{{$rs->id}}</td>
                                         <td>{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs->category, $rs->category->title?? 'no title')}}</td>
                                         <td>{{$rs->title}}</td>
+                                        <td>
+                                            @if($rs->file)
+                                                <img src="{{Storage::url($rs->file)}}" style="height: 40px">
+                                            @endif
+
+                                        </td>
                                         <td>
                                             @if($rs->image)
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px">

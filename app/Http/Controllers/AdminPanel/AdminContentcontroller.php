@@ -63,6 +63,9 @@ class AdminContentcontroller extends Controller
         if($request->file('image')){
             $data->image= $request->file('image')->store('image');
         }
+        if($request->file('file')){
+            $data->file= $request->file('file')->store('file');
+        }
         $data->save();
         return redirect('admin/content');
     }
@@ -124,6 +127,9 @@ class AdminContentcontroller extends Controller
         if($request->file('image')){
             $data->image= $request->file('image')->store('image');
         }
+        if($request->file('file')){
+            $data->file= $request->file('file')->store('file');
+        }
         $data->save();
         return redirect('admin/content');
 
@@ -141,6 +147,10 @@ class AdminContentcontroller extends Controller
         $data= Content::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
+
+        }
+        if ($data->file && Storage::disk('public')->exists($data->file)) {
+            Storage::delete($data->file);
 
         }
         $data->delete();

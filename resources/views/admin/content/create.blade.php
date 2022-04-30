@@ -40,17 +40,17 @@
                                             <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" class="form-control" name="title" placeholder="Title">
-                                            <p class="help-block">Help text here.</p>
+
                                         </div>
                                         <div class="form-group">
                                             <label>Keyword</label>
                                             <input type="text" class="form-control" name="keyword" placeholder="keyword">
-                                            <p class="help-block">Help text here.</p>
+
                                         </div>
                                         <div class="form-group">
                                             <label>Description </label>
                                             <input type="text" class="form-control" name="description" placeholder="Description">
-                                            <p class="help-block">Help text here.</p>
+
                                         </div>
 
                                         <div class="form-group">
@@ -71,8 +71,13 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Choose Image file</label>
+                                            <label>Choose Image</label>
                                             <input type="file" class="custom-file-input" name="image">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Choose file</label>
+                                            <input type="file" class="custom-file-input" name="file">
                                         </div>
 
                                         <div class="form-group">

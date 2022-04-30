@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('keyword')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
+            $table->string('file')->nullable();
             $table->text('detail')->nullable();
             $table->string('status', 6)->default('False');
             $table->timestamps();

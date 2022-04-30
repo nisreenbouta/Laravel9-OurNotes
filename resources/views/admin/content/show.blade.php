@@ -59,6 +59,12 @@
                                                         <td>{!!  $data->detail !!}</td>
                                                     </tr>
                                                     <tr>
+                                                        <th>File</th>
+                                                        <td>@if($data->file)
+                                                                <img src="{{Storage::url($data->file)}}" style="height: 100px">
+                                                            @endif</td>
+                                                    </tr>
+                                                    <tr>
                                                         <th>Image</th>
                                                         <td>@if($data->image)
                                                                 <img src="{{Storage::url($data->image)}}" style="height: 100px">

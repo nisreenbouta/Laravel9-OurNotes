@@ -6,14 +6,14 @@
                 <h3>Recent Uploaded Notes</h3>
 
                 <div class="row">
-
+                    @foreach($contentlist1 as $rs)
                     <div class="col-md-4">
                         <div class="single-book">
-                            <img src="{{asset('assets')}}/images/books/book.jpg" alt="">
+                            <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 200px">
                             <div class="book-short-info">
-                                <h5>Java Programming</h5>
+                                <h5>{{$rs->title}}</h5>
                                 <p>
-                                    <a href="" class=""><i class="fa fa-upload"></i> Nisreen Bouta</a>
+                                    <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                                 </p>
                                 <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
                                 <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Mylist</a>
@@ -21,65 +21,7 @@
                             </div>
                         </div>
                     </div> <!-- Single Book Item -->
-                    <div class="col-md-4">
-                        <div class="single-book">
-                            <img src="{{asset('assets')}}/images/books/book2.jpg" alt="">
-                            <div class="book-short-info">
-                                <h5>C Programming</h5>
-                                <p>
-                                    <a href="" class=""><i class="fa fa-upload"></i> Nisreen Bouta</a>
-                                </p>
-                                <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Mylist</a>
-
-                            </div>
-                        </div>
-                    </div> <!-- Single Book Item -->
-
-                    <div class="col-md-4">
-                        <div class="single-book">
-                            <img src="{{asset('assets')}}/images/books/book1.jpg" alt="">
-                            <div class="book-short-info">
-                                <h5>C++ Programming</h5>
-                                <p>
-                                    <a href="" class=""><i class="fa fa-upload"></i> Nisreen Bouta</a>
-                                </p>
-                                <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Mylist</a>
-
-                            </div>
-                        </div>
-                    </div> <!-- Single Book Item -->
-                    <div class="col-md-4">
-                        <div class="single-book">
-                            <img src="{{asset('assets')}}/images/books/book3.jpg" alt="">
-                            <div class="book-short-info">
-                                <h5>Java Programming</h5>
-                                <p>
-                                    <a href="" class=""><i class="fa fa-upload"></i> Nisreen Bouta</a>
-                                </p>
-                                <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Mylist</a>
-
-                            </div>
-                        </div>
-                    </div> <!-- Single Book Item -->
-                    <div class="col-md-4">
-                        <div class="single-book">
-                            <img src="{{asset('assets')}}/images/books/book4.jpg" alt="">
-                            <div class="book-short-info">
-                                <h5>Java Programming</h5>
-                                <p>
-                                    <a href="" class=""><i class="fa fa-upload"></i> Nisreen Bouta</a>
-                                </p>
-                                <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Mylist</a>
-
-                            </div>
-                        </div>
-                    </div> <!-- Single Book Item -->
-
-
+                    @endforeach
                 </div>
 
                 <div class="books-pagination mt-5">
