@@ -4,17 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
+        $page='home';
         $sliderdata=Content::limit(4)->get();
         $contentlist1=Content::limit(6)->get();
         return view('home.index',[
+            'page'=>$page,
             'sliderdata'=>$sliderdata,
             'contentlist1'=>$contentlist1
+        ]);
+    }
+
+    public function content($id)
+    {
+        $images = DB::table('images')->where('content_id', $id)->get();
+        $data= Content::find($id);
+        return view('home.content',[
+            'data'=>$data,
+            'images'=>$images
         ]);
     }
 

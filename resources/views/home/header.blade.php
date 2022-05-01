@@ -52,6 +52,7 @@
             </div>
           </li>
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2 search-form" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-secondary my-2 my-sm-0 search-button" type="submit"><i class="fa fa-search"></i></button>

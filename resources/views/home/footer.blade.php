@@ -1,11 +1,11 @@
 
 <!-- Footer Start -->
-<div class="footer-area">
+<div class="card-footer">
     <div class="container">
         <div class="row">
 
             <div class="col-md-3">
-                <img src="assets/images/logo.png" class="logo-image">
+                <img src="{{asset('assets')}}/images/logo.png" class="logo-image">
                 <p>
                 <address>
                     Karabük,Turkey

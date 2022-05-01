@@ -39,6 +39,9 @@ Route::get('/param/{id}/{number}',[HomeController::class, 'param'])->name('param
 //6- route with post
 Route::post('/save',[HomeController::class, 'save'])->name('save');
 
+Route::get('/content/{id}/',[HomeController::class, 'content'])->name('content');
+
+
 Route::get('/index', 'HomeController@index')->name('index');
 
 Route::middleware([
