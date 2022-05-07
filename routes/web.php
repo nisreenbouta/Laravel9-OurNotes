@@ -40,6 +40,8 @@ Route::get('/param/{id}/{number}',[HomeController::class, 'param'])->name('param
 Route::post('/save',[HomeController::class, 'save'])->name('save');
 
 Route::get('/content/{id}/',[HomeController::class, 'content'])->name('content');
+Route::get('/categorycontent/{id}/{slug}',[HomeController::class, 'categorycontent'])->name('categorycontent');
+
 
 
 Route::get('/index', 'HomeController@index')->name('index');

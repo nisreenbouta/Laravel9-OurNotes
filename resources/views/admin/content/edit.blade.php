@@ -2,10 +2,7 @@
 
 @section('title', 'Edit Content: '. $data->title )
 @section('head')
-
-    <!-- include summernote css/js -->
-    <link href="{{asset('assets/css/summernote.css')}}" rel="stylesheet">
-    <script src="{{asset('assets/js/summernote.js')}}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 @section('content')
 
@@ -44,23 +41,31 @@
                                         <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" class="form-control" name="title" value="{{$data->title}}">
-                                            <p class="help-block">Help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Keyword</label>
                                             <input type="text" class="form-control" name="keyword" value="{{$data->keyword}}">
-                                            <p class="help-block">Help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>Description </label>
                                             <input type="text" class="form-control" name="description" value="{{$data->description}}">
-                                            <p class="help-block">Help text here.</p>
+
                                         </div>
                                         <div class="form-group">
                                             <label>Detail INFO</label>
-                                            <textarea class="form-control"  name="detail">
+                                            <textarea class="form-control" id="detail" name="detail">
                                                 {{$data->detail}}
                                             </textarea>
+                                            <script>
+                                                ClassicEditor
+                                                    .create( document.querySelector( '#detail' ) )
+                                                    .then( editor => {
+                                                        console.log( editor );
+                                                    } )
+                                                    .catch( error => {
+                                                        console.error( error );
+                                                    } );
+                                            </script>
 
                                         </div>
 
@@ -106,14 +111,5 @@
     <!-- /. PAGE WRAPPER  -->
 
 @endsection
-@section('foot')
-                <script src="{{asset('assets/js/summernote.js')}}"></script>
 
-                <script>
-                    $(function (){
-                        //summernote
-                        $('.textarea').summernote();
-                    })
-                </script>
-@endsection
 
