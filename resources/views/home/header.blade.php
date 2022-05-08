@@ -21,7 +21,7 @@
   <div class="main-navbar">
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand mr-5" href="{{ route('index') }}">
+      <a class="navbar-brand mr-5" href="{{route('index')}}">
 
         <img src="{{asset('assets')}}/images/logo.png" class="logo-image">
       </a>
@@ -31,9 +31,7 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ route('index') }}">Home <span class="sr-only">(current)</span></a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="top-books.html">Top Notes</a>
           </li>

@@ -40,13 +40,13 @@ class HomeController extends Controller
 
     public function categorycontent($id)
     {
-        echo 'categorycontent';
-        exit();
-        $images = DB::table('images')->where('content_id', $id)->get();
-        $data= Content::find($id);
-        return view('home.content',[
-            'data'=>$data,
-            'images'=>$images
+
+        $category= Category::find($id);
+        $content = DB::table('contents')->where('category_id', $id)->get();
+
+        return view('home.categorycontent',[
+            'category'=>$category,
+            'content'=>$content
         ]);
     }
 

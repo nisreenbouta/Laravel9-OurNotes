@@ -2,31 +2,38 @@
     @php
         $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
        @endphp
+
                 <div class="col-md-12">
                     <div class="widget @if (!@isset($page)) @endif">
-                        <h5 class="mb-2 border-bottom pb-3">
-                            Categories
+                        <h5 class="md-1 border-bottom pb-1">
+                             Categories
                         </h5>
                         <ul class="category-list">
-    @foreach($mainCategories as $rs)
-        <li class="dropdown sidebar-collapse">
-                        <div class="list-group mt-3">
-                            <a href="#" class="list-group-item list-group-item-action">
-                                {{$rs->title}}
-                            </a>
-                          <div class="row">
-                              @if(count($rs->children)) @include('home.categorytree', ['children' => $rs->children]) @endif
 
+    @foreach($mainCategories as $rs)
+        <li class="navbar-toggler-icon">
+                                <li class="single-top-link">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$rs->title}}</a>
+
+                            @if(count($rs->children))
+                                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                            <a class="dropdown-item" href="#"> @include('home.categorytree', ['children' => $rs->children])</a>
+                                        </div>
+                                    @endif
+                                </li>
+
+
+                        </ul>
                           </div>
+
                         </div>
 
-                            </li>
+
                             @endforeach
-                        </ul>
+
                     </div> <!-- Single Widget -->
 
-                </div> <!-- Sidebar -->
+            <!-- Sidebar -->
 
-    </div>
 
 
