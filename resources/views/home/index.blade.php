@@ -113,7 +113,7 @@
                         <div class="col-md-4">
                             <div class="single-book">
 
-                                <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 250px">
+                                <img src="{{Storage::url($rs->image)}}" style="height: 210px; width: 270px">
                                 <div class="book-short-info">
                                     <h5>{{$rs->title}}</h5>
                                     <p>
