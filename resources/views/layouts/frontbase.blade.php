@@ -7,7 +7,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>@yield("title")</title>
-
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="NISREEN BOUTA">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
     <!-- Bootstrap core CSS -->
     <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet">
 
