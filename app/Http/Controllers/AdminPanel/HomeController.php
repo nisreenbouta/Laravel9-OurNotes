@@ -55,7 +55,7 @@ class HomeController extends Controller
         }
         $data->status = $request->input('status');
         $data->save();
-        return redirect()->route('admin.settong');
+        return redirect()->route('admin.setting');
 
 
 

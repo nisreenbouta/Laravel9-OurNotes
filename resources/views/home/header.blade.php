@@ -32,6 +32,10 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
 
+            <li class="nav-item"><a class="nav-link" href="{{route('home')}}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('references')}}">References</a></li>
+
           <li class="nav-item">
             <a class="nav-link" href="top-books.html">Top Notes</a>
           </li>
@@ -49,11 +53,13 @@
               <a class="dropdown-item" href="rules.html">Upload Rules</a>
             </div>
           </li>
+            <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+
         </ul>
 
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-n5">
           <input class="form-control mr-sm-2 search-form" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-secondary my-2 my-sm-0 search-button" type="submit"><i class="fa fa-search"></i></button>
+          <button class="btn btn-secondary my-n1 my-sm-0 search-button" type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
     </div>

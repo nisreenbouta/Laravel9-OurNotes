@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Settings')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
 
@@ -27,7 +29,7 @@
                             <li class="active"><a href="#general" data-toggle="tab">General</a></li>
                             <li class=""><a href="#smtp" data-toggle="tab">Smtp Email</a></li>
                             <li class=""><a href="#social" data-toggle="tab">Social media</a></li>
-                            <li class=""><a href="#about" data-toggle="tab">About us</a></li>
+                            <li class=""><a href="#aboutus" data-toggle="tab">About us</a></li>
                             <li class=""><a href="#contact" data-toggle="tab">Contact</a></li>
                             <li class=""><a href="#references" data-toggle="tab">References</a></li>
                         </ul>
@@ -35,6 +37,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="general">
                                 <form role="form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <input type="hidden" id ="id" name="id" value="{{$data->id}}" class="form-control">
                                     <div class="form-group">
                                         <label>Title</label>
@@ -73,7 +76,6 @@
                                     <button type="reset" class="btn btn-primary">Reset </button>
                                 </form>
                             </div>
-
 
                             <div class="tab-pane fade" id="smtp">
                                 <div class="form-group">
@@ -121,12 +123,12 @@
                             </div>
 
 
-                            <div class="tab-pane fade" id="about">
+                            <div class="tab-pane fade" id="aboutus">
                                 <h4>About Us</h4>
-                                <textarea id="about" name="about" >{{$data->aboutus}}</textarea>
+                                <textarea id="aboutus" name="aboutus" >{{$data->aboutus}}</textarea>
                                 <script>
                                     ClassicEditor
-                                        .create( document.querySelector( '#about' ) )
+                                        .create( document.querySelector( '#aboutus' ) )
                                         .then( editor => {
                                             console.log( editor );
                                         } )
