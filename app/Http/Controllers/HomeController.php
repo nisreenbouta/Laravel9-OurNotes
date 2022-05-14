@@ -58,7 +58,7 @@ class HomeController extends Controller
 
     public function storemessage(Request $request)
     {
-        dd($request);
+       // dd($request);
         $data = new Meassage();
         $data->name = $request->input('name');
         $data->email = $request->input('email');

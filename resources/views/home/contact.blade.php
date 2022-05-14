@@ -23,36 +23,36 @@
                     <div class="advance-search">
 
                             <h3>Contact Form</h3>
-
+                        @include('home.messages')
                             <form action="{{route("storemessage")}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name & Surname">
+                                            <input type="text" class="input-group-text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name & Surname">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number">
+                                            <input type="tel" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number">
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">
+                                            <input type="email" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                                         </div>
                                     </div>
 
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" class="input-group-text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">
+                                        </div>
+                                    </div>
+
 
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <textarea class="form-control"  type="text" name="message" placeholder="Message"></textarea>
+                                            <textarea class="input-group-text"  type="text" name="message" placeholder="Message"></textarea>
                                         </div>
                                     </div>
 
