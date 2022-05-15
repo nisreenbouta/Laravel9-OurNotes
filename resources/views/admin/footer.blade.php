@@ -7,5 +7,6 @@
 <script src="{{asset('adminassets/js/jquery.metisMenu.js')}}"></script>
 <!-- CUSTOM SCRIPTS -->
 <script src="{{asset('adminassets/js/custom.js')}}"></script>
+<script src="{{asset('assets/js/summernote.js')}}"></script>
 <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
 

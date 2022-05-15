@@ -70,7 +70,7 @@
             </lord-icon>FAQ</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/messages"style="padding-left:25px"><lord-icon
+        <a  href="{{route('admin.message.index')}}"style="padding-left:25px"><lord-icon
                 src="https://cdn.lordicon.com/gzmgulpl.json"
                 trigger="loop"
                 colors="outline:#ffffff,primary:#ee6d66,secondary:#ebe6ef"

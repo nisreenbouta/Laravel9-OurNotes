@@ -33,11 +33,10 @@
                             <li class=""><a href="#contact" data-toggle="tab">Contact</a></li>
                             <li class=""><a href="#references" data-toggle="tab">References</a></li>
                         </ul>
-
+                        <form role="form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data">
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="general">
-                                <form role="form" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data">
-                                    @csrf
+                                @csrf
                                     <input type="hidden" id ="id" name="id" value="{{$data->id}}" class="form-control">
                                     <div class="form-group">
                                         <label>Title</label>
@@ -72,9 +71,7 @@
                                         </label>
                                     </div>
 
-                                    <button type="submit" class="btn btn-default">Update Setting</button>
-                                    <button type="reset" class="btn btn-primary">Reset </button>
-                                </form>
+
                             </div>
 
                             <div class="tab-pane fade" id="smtp">
@@ -125,54 +122,61 @@
 
                             <div class="tab-pane fade" id="aboutus">
                                 <h4>About Us</h4>
-                                <textarea id="aboutus" name="aboutus" >{{$data->aboutus}}</textarea>
-                                <script>
-                                    ClassicEditor
-                                        .create( document.querySelector( '#aboutus' ) )
-                                        .then( editor => {
-                                            console.log( editor );
-                                        } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
-                                </script>
+                                <textarea id="aboutusedit" name="aboutus" >{{$data->aboutus}}</textarea>
                             </div>
 
 
                             <div class="tab-pane fade" id="contact">
                                 <h4>Contact</h4>
-                                <textarea id="contact" name="contact" >{{$data->contact}}</textarea>
-                                <script>
-                                    ClassicEditor
-                                        .create( document.querySelector( '#contact' ) )
-                                        .then( editor => {
-                                            console.log( editor );
-                                        } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
-                                </script>
+                                <textarea id="contactedit" name="contact" >{{$data->contact}}</textarea>
+
                             </div>
 
 
-                            <div class="tab-pane fade" id="references">
+                            <div class="note-editor tab-pane fade" id="references">
                                 <h4>References</h4>
-                                <textarea id="references" name="references" >{{$data->references}}</textarea>
-                                <script>
-                                    ClassicEditor
-                                        .create( document.querySelector( '#references' ) )
-                                        .then( editor => {
-                                            console.log( editor );
-                                        } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
-                                </script>
+                                <textarea id="referencesedit" name="references" >{{$data->references}}</textarea>
+
                             </div>
+
                         </div>
+                            <button type="submit" class="btn btn-default">Update Setting</button>
+                            <button type="reset" class="btn btn-primary">Reset </button>
+                        </form>
                     </div>
                 </div>
             </div>
-
 @endsection
 
+ @section('foot')
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#contactedit' ) )
+                        .then( editor => {
+                            console.log( editor );
+                        } )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#aboutusedit' ) )
+                        .then( editor => {
+                            console.log( editor );
+                        } )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#referencesedit' ) )
+                        .then( editor => {
+                            console.log( editor );
+                        } )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
+@endsection

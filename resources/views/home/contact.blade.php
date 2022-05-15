@@ -17,65 +17,41 @@
     <div class="section">
 
             <div class="container">
-
-                <div class="row">
-
-                    <div class="advance-search">
-
-                            <h3>Contact Form</h3>
+                <div class="advance-search">
+                    <div class="col-md-12 border p-4">
+                        <h3>Contact Form</h3>
                         @include('home.messages')
-                            <form action="{{route("storemessage")}}" method="post">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <input type="text" class="input-group-text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name & Surname">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <input type="tel" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <input type="email" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                                        </div>
-                                    </div>
+                        <form action="{{route("storemessage")}}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" name="fullname" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name & Surname">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" class="input-group" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="input-group" name="message" type="text" name="message" placeholder="Message"></textarea>
+                            </div>
+                            <br>
+                            <div class="form-group">
 
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <input type="text" class="input-group-text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <textarea class="input-group-text"  type="text" name="message" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <input class="form-control" type="submit"  value="Send Message" >
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
-
+                                <input class="form-control" type="submit"  value="Send Message" >
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h3>Contact Information</h3>
-                    <p class="text-muted">Uploaded By
-                        <span class="text-primary">n</span> @<span class="text-info">n</span>
-                    </p>
+                    <br>
+                    <h1>Contact Information</h1>
                     {!! $setting->contact !!}
 
                 </div>
-
             </div>
         </div>
     </div>

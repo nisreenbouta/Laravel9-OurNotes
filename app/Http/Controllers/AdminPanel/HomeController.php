@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function settingUpdate(Request $request)
     {
-        $id = $request->input('id');
+        $id = 1;
         $data = setting::find($id);
         $data->title = $request->input('title');
         $data->keyword = $request->input('keyword');
@@ -48,8 +48,8 @@ class HomeController extends Controller
         $data->twitter = $request->input('twitter');
         $data->youtube = $request->input('youtube');
         $data->aboutus = $request->input('aboutus');
-        $data->contact = $request->input('contact');
-        $data->references = $request->input('references');
+        $data->contact = $request->contact;
+        $data->references = $request->references;
         if($request->file('icon')){
             $data->icon= $request->file('icon')->store('images');
         }
