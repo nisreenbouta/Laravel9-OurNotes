@@ -62,7 +62,7 @@
             Comments</a>
         </li><br>
         <li class="nav-item">
-        <a  href="/admin/faq"style="padding-left:25px"><lord-icon
+        <a  href="{{route('admin.faq.index')}}"style="padding-left:25px"><lord-icon
                 src="https://cdn.lordicon.com/ccwgfhfg.json"
                 trigger="loop"
                 colors="outline:#ffffff,primary:#92140c,secondary:#4bb3fd,tertiary:#ffffff"
