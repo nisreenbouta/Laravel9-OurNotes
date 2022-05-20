@@ -25,9 +25,9 @@
                     <div class="col-md-12">
                         <h1>Frequently Asked Questions</h1>
 <hr>
-                   @foreach($datalist as $rs)
-                       <h3>{{$rs->question}}</h3>
-                       <p>{!!$rs->answer!!}</p>
+                        @foreach($datalist as $rs)
+                            <h3>{{$rs->question}}</h3>
+                            <p>{!!$rs->answer!!}</p>
                         @endforeach
                 </div>
             </div>
