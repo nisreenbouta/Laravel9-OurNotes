@@ -37,7 +37,7 @@
             <li class="nav-item"><a class="nav-link" href="{{route('references')}}">References</a></li>
 
           <li class="nav-item">
-            <a class="nav-link" href="top-books.html">Top Notes</a>
+            <a class="nav-link" href="{{route('faq')}}">FAQ</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter Notes By</a>

@@ -15,6 +15,7 @@ class FaqController extends Controller
      */
     public function index()
     {
+
         $data= Faq::all();
         return view('admin.faq.index', [
             'data'=> $data
@@ -29,7 +30,10 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        $data= Faq::all();
+        return view('admin.faq.create', [
+            'data'=> $data
+        ]);
     }
 
     /**
@@ -40,7 +44,12 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Faq();
+        $data->question =$request->question;
+        $data->answer =$request->answer;
+        $data->status = $request->status;
+        $data->save();
+        return redirect('admin/faq');
     }
 
     /**
@@ -62,19 +71,30 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data= Faq::find($id);
+        return view('admin.faq.edit', [
+            'data'=> $data
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param \App\Model\Faq $faq
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Faq $faq, $id)
     {
-        //
+
+        $data =Faq::find($id);
+        $data->question =$request->question;
+        $data->answer =$request->answer;
+        $data->status = $request->status;
+        $data->save();
+        return redirect('admin/faq');
+
     }
 
     /**

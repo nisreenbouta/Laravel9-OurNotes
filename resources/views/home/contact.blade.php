@@ -19,7 +19,9 @@
             <div class="container">
                 <div class="advance-search">
                     <div class="col-md-12 border p-4">
+
                         <h3>Contact Form</h3>
+                    <hr>
                         @include('home.messages')
                         <form action="{{route("storemessage")}}" method="post">
                             @csrf

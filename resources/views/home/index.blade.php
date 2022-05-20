@@ -62,6 +62,7 @@
     <div class="advance-search">
         <div class="container">
             <h3>Advance Search</h3>
+            <hr>
             <form>
                 <div class="row">
                     <div class="col-md-4">
@@ -109,7 +110,7 @@
 
             <div class="col-md-9">
                 <h3>Uploaded Notes</h3>
-
+<hr>
                 <div class="row">
 
                     @foreach($contentlist1 as $rs)
