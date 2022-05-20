@@ -7,7 +7,7 @@
 
         <div id="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home </a></li>
+                <li class="breadcrumb-item"><a href="{{route('home')}}">Home </a></li>
                 <li class="breadcrumb-item"><a href="#">Content </a></li>
                 <li class="breadcrumb-item"><a href="#">Category </a></li>
             <li class="breadcrumb-item active"></a> {{$data->title}}</li>
