@@ -59,9 +59,14 @@
         </ul>
 
         <form class="form-inline my-2 my-lg-n5">
+
           <input class="form-control mr-sm-2 search-form" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-secondary my-n1 my-sm-0 search-button" type="submit"><i class="fa fa-search"></i></button>
+
         </form>
+      </div>
+      </div>
+   </nav>
       </div>
     </div>
   </nav>
