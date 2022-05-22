@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Authenticate;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Content;
 use App\Models\Faq;
+use App\Models\Image;
 use App\Models\Meassage;
 use App\Models\setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -83,13 +87,30 @@ class HomeController extends Controller
 
     }
 
+    public function storecomment(Request $request)
+    {
+        //dd($request);
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->content_id = $request->input('content_id');
+        $data->rate = $request->rate;
+        $data->review = $request->input('review');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('content',['id'=>$request->input('content_id')])->with('success', 'Your comment has been sent, Thank you!. ');
+
+    }
+
     public function content($id)
     {
-        $images = DB::table('images')->where('content_id', $id)->get();
+        $images = Image::where('content_id', $id)->get();
         $data= Content::find($id);
+        $review =Comment::where('content_id',$id)->where('status', 'True')->get();
         return view('home.content',[
             'data'=>$data,
-            'images'=>$images
+            'images'=>$images,
+            'review' => $review
         ]);
     }
 
