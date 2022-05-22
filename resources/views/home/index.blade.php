@@ -120,6 +120,15 @@
                                 <img src="{{Storage::url($rs->image)}}" style="height: 210px; width: 270px">
                                 <div class="book-short-info">
                                     <h5>{{$rs->title}}</h5>
+                                    @php
+                                        $average = $rs->comment->average('rate');
+                                    @endphp
+                                    <div class="rating">
+
+                                        {{number_format($average,0)}}<i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                                       <h5>{{$rs->comment->count('id')}} Reviews</h5>
+                                    </div>
+
                                     <p>
                                         <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                                     </p>

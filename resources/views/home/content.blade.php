@@ -66,16 +66,26 @@
 
                             <strong class="text-uppercase">Your Rating: </strong>
 
-                                <input type="number" id="star5" name="rate" value="5" /><label for="star5"></label>
+                                <input type="number" id="rate" name="rate" value="5" /><label for="rate"></label>
                             <div class="form-group">
                                 @auth()
                                 <input class="form-control" type="submit"  value="Send Comment" >
                                 @else
                                 <a href="/login" class="btn btn-outline-danger">For Submitting Your Review, Please Login</a>
                                 @endauth
+                            </div>
                                 <hr>
                                     <strong><h2>REVIEWS</h2></strong>
-                                    @foreach($review as $rs)
+                                    @php
+                                        $average = $data->comment->average('rate');
+                                    @endphp
+                            <div class="rating">
+
+                                {{number_format($average,0)}}<i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                            </div>
+                            <a href="#">{{$data->comment->count('id')}}/ Review(s) / Add Review</a>
+
+                        @foreach($review as $rs)
 
                                         <div class="col-md-12">
                                             <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
