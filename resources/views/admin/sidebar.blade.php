@@ -3,6 +3,10 @@
         <ul class="nav" id="main-menu">
             <li class="text-center">
                 <img src="{{asset('adminassets')}}/img/find_user.png" class="user-image img-responsive"/>
+                <div class="info">
+                    <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                    <a href="/logoutuser" class="btn btn-danger square-btn-adjust">Logout</a>
+                </div>
             </li>
 
 
@@ -11,7 +15,7 @@
                 <a  href="/admin"style="padding-left:25px"><lord-icon
                         src="https://cdn.lordicon.com/etqbfrgp.json"
                         trigger="loop"
-                        style="width:40px;height:40px">
+                        style=" width:40px;height:40px">
                     </lord-icon> Dashboard</a>
             </li>
             <li>
