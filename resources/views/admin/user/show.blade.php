@@ -42,7 +42,7 @@
                                                         <th>Role</th>
                                                         <td> @foreach($data->roles as $role)
                                                                 {{$role->name}}
-                                                            <a href="{{route('admin.user.destroyrole',['uid'=>$data->id, 'rid'=>$role->id])}}"<a
+                                                            <a href="{{route('admin.user.destroyrole',['uid'=>$data->id, 'rid'=>$role->id])}}"></a><a
                                                                     onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">[x]</a>
 
 
