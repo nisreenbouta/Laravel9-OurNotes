@@ -46,12 +46,18 @@ class BookMarkController extends Controller
 
         public function store(Request $request)
     {
-        $id=$request->id;
 
         $data=BookMark::where('content_id', $id)->where('user_id', Auth::id())->first();
-        $data = new BookMark();
-        $data->content_id = $request->input('id');
-        $data->user_id =Auth::id();
+        if ($data)
+        {
+            $data->quantity=$data->quantity +1;
+        }else
+        {
+            $data = new BookMark();
+            $data->content_id = $id;
+            $data->user_id =Auth::id();
+            $data->quantity=1;
+        }
         $data->save();
 
         return redirect()->back()->with('info', 'Added to Bookmarks Succecfully!. ');
@@ -76,9 +82,18 @@ class BookMarkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function add($id)
     {
-        //
+
+        $data=BookMark::where('content_id', $id)->where('user_id', Auth::id())->first();
+        $data = new BookMark();
+        $data->content_id = $id;
+        $data->user_id =Auth::id();
+        $data->save();
+
+        return redirect()->back()->with('info', 'Added to Bookmarks Succecfully!. ');
+
+
     }
 
     /**

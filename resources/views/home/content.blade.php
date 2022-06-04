@@ -56,7 +56,7 @@
 
                 </div>
                 <div class="col-md-3">
-                    <form action="{{route("storecomment")}}" method="post">
+                    <form action="{{route('bookmark.store')}}" method="post">
                         @csrf
                         <div class="form-group">
                             <input type="hidden" name="content_id" class="input" id="content_id" aria-describedby="emailHelp" value="{{$data->id}}">

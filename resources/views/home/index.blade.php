@@ -133,7 +133,7 @@
                                         <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                                     </p>
                                     <a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                    <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> My list</a>
+                                    <a href="{{route('bookmark.add',['id'=>$rs->id])}}" class="btn btn-outline-warning"><i class="fa fa-bookmark"></i> My BookMarks</a>
 
                                 </div>
                             </div>

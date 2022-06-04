@@ -41,7 +41,7 @@
                                             <div class="book-short-info">
                                                 <h5>{{$rs->title}}</h5>
                                                 <p>
-                                                    <a href="" class=""><i class="fa fa-upload"></i> Polash Rana</a>
+                                                    <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                                                 </p>
                                                 <a href="book-view.html" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
                                                 <a href="{{route('bookmark.destroy',['id'=>$rs->id])}}"<a
