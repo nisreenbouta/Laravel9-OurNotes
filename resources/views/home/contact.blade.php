@@ -17,8 +17,8 @@
     <div class="section">
 
             <div class="container">
-                <div class="advance-search">
-                    <div class="col-md-12 border p-4">
+                <div class="row">
+                    <div class="col-md-6 ">
 
                         <h3>Contact Form</h3>
                     <hr>
@@ -46,14 +46,17 @@
                                 <input class="form-control" type="submit"  value="Send Message" >
                             </div>
                         </form>
+
                     </div>
-                </div>
+
+
                 <div class="col-md-6">
                     <br>
                     <h1>Contact Information</h1>
                     {!! $setting->contact !!}
 
                 </div>
+            </div>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
               <a class=" pointer top-header-link" href="/loginuser">LOGIN</a><a href="/registeruser" class=" pointer top-header-link">JOIN US</a>
           @endguest
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="profile.html">Profile</a>
+          <a class="dropdown-item" href="{{route('userpanel.index')}}">Profile</a>
           <a class="dropdown-item" href="dashboard.html">Dashboard</a>
 
         </div>

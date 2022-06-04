@@ -72,6 +72,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
+//**************USER AUTH CONTROL**************
+Route::middleware('auth')->group(function (){
+
+
+
+//**************USER ROUTES**************
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
+
 //**************ADMIN PANEL ROUTES**************
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
@@ -153,5 +163,6 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/addrole/{id}','addrole')->name('addrole');
         Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
     });
+  });
 });
 

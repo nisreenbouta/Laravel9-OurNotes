@@ -141,9 +141,14 @@
                     @endforeach
 
                 <div class="books-pagination mt-5">
+
+
                     <nav aria-label="...">
+                        <hr>
                         <ul class="pagination">
+
                             <li class="page-item disabled">
+
                                 <span class="page-link">Previous</span>
                             </li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>

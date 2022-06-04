@@ -1,11 +1,17 @@
+
 <html>
+
 <head>
     <link href="{{asset('adminassets/css/bootstrap.css')}}" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="{{asset('adminassets/css/font-awesome.css')}}" rel="stylesheet" />
 </head>
     <body>
+    <div class="section">
 
+        <div class="container">
+
+            <div class="row">
             <form action="{{route('loginadmincheck')}}" method="post">
                 @include('home.messages')
                 @csrf
@@ -27,6 +33,9 @@
                 <a href="/registeruser" type="submit" class="text-center">Register </a>
             </form>
             </div>
+        </div>
+    </div>
+    </body>
 
             <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
             <!-- JQUERY SCRIPTS -->

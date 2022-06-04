@@ -40,11 +40,11 @@
 
                                                     <tr>
                                                         <th>Role</th>
-                                                        <td> @foreach($data->roles as $role)
+                                                        <td>
+                                                            @foreach($data->roles as $role)
                                                                 {{$role->name}}
-                                                            <a href="{{route('admin.user.destroyrole',['uid'=>$data->id, 'rid'=>$role->id])}}"></a><a
-                                                                    onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">[x]</a>
-
+                                                            <a href="{{route('admin.user.destroyrole',['uid'=>$data->id, 'rid'=>$role->id])}}"
+                                                                  onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">[x]</a>
 
                                                             @endforeach</td>
                                                     </tr>
@@ -61,11 +61,13 @@
                                                     <tr>
                                                         <th>Add Role TO User </th>
                                                         <td>
+
                                                              <form role="form" action="{{route('admin.user.addrole',['id'=>$data->id])}}" method="post" >
                                                                 @csrf
-                                                                 <select name="role" >
+
+                                                                 <select name="role_id" >
                                                                      @foreach($roles as $role)
-                                                                         <option value="{{$role->id}}"></option>
+                                                                         <option value="{{$role->id}}">{{$role->name}}</option>
                                                                      @endforeach
                                                                  </select>
                                                                   <button type="submit" class="btn btn-default">Add Role</button>

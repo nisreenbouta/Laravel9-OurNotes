@@ -1,14 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\AdminPanel;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Role;
-use App\Models\RoleUser;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,28 +13,9 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $data= User::all();
-        return view('admin.user.index', [
-            'data'=> $data
-
-        ]);
+        return view('home.user.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function addrole(Request $request, $id)
-    {
-        $data= new RoleUser();
-        $data->user_id = $id;
-        $data->role_id = $request->role_id;
-        $data->save();
-        return redirect(route('admin.user.show',['id'=>$id]));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -68,13 +45,7 @@ class AdminUserController extends Controller
      */
     public function show($id)
     {
-        $data= User::find($id);
-        $roles= Role::all();
-        return view('admin.user.show', [
-            'data'=> $data,
-           'roles'=> $roles
-
-        ]);
+        //
     }
 
     /**
@@ -109,19 +80,5 @@ class AdminUserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     *
-     */
-    public function destroyrole($uid, $rid)
-    {
-        $user= User::find($uid);
-        $user->roles()->detach($rid);
-        return redirect(route('admin.user.show',['id'=>$uid]));
     }
 }
