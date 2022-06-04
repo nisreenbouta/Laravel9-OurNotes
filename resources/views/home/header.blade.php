@@ -6,7 +6,11 @@
         <a class="dropdown-toggle pointer top-header-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user"></i> {{Auth::user()->name}}
         </a>
-
+              <a class=" pointer top-header-link" href="{{route('bookmark.index')}}">My BookMarks</a>
+                <div class="navbar-toggler-icon">
+                    <i class="fa fa-sort-numeric-asc"></i>
+                    <span class="qty">{{\App\Http\Controllers\BookMarkController::countbookmark()}}</span>
+                </div>
           @endauth
           @guest
               <a class=" pointer top-header-link" href="/loginuser">LOGIN</a><a href="/registeruser" class=" pointer top-header-link">JOIN US</a>
@@ -14,7 +18,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="{{route('userpanel.index')}}">Profile</a>
             <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-            <a class="dropdown-item" href="dashboard.html">Items in Mylist</a>
+            <a class="dropdown-item" href="{{route('bookmark.index')}}">My BookMarks</a>
             <a class="dropdown-item" href="{{route('userpanel.reviews')}}">My Reviews</a>
             <a class="dropdown-item" href="dashboard.html">My Uploaded notes</a>
             <a class="dropdown-item" href="/logoutuser">LogOut</a>

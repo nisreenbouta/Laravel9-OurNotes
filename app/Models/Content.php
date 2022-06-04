@@ -18,4 +18,9 @@ class Content extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function bookmark()
+    {
+        return $this->hasMany(BookMark::class);
+    }
 }

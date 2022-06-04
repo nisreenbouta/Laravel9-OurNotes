@@ -44,11 +44,14 @@
                         <br>
                         <p><strong>Detail INFO:  </strong>{!! $data->detail !!}</p>
 
-                        <div class="book-buttons mt-4">
-                            <a href="" class="btn btn-outline-success"><i class="fa fa-check"></i> Already Read</a>
+                        <form action="{{route('bookmark.store')}}" method="post">
+                            @csrf
+                            <div class="book-buttons mt-4">
+                                <button type="submit" class="btn btn-outline-warning"><i class="fa fa-bookmark" name="bookmark"></i> Add to My BookMarks
+                                </button>
+                            </div>
 
-                            <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> Add to My list</a>
-                        </div>
+                        </form>
                     </div>
 
                 </div>

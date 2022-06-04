@@ -56,7 +56,8 @@
                                 <td>{{$rs->status}}</td>
 
                                 </td>
-                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}"<a onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
+                                <td><a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}"<a
+                                        onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a></td>
 
 
                             </tr>
