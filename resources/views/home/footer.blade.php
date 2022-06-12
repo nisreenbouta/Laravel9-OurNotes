@@ -58,7 +58,7 @@
 <script src="{{asset('assets')}}/js/jquery-3.3.1.min.js"></script>
 <script src="{{asset('assets')}}/js/popper.min.js"></script>
 <script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
-    !-- important mandatory libraries -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
 

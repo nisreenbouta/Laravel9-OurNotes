@@ -23,15 +23,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         @include('home.messages')
-
-                        @foreach($images as $rs)
-
-                            <img src="{{Storage::url($rs->image)}}" class="img img-fluid" style="width: 250px ; height: 200px">
-
-                        @endforeach
-
-
-
+                        <img src="{{Storage::url($data->image)}}"  style="width: 550px;height: 350px"/>
                         <h3>{{$data->title}}</h3>
                         <p class="text-muted">Uploaded By
                             <span class="text-primary">{{$data->user_id}}</span> @<span class="text-info">{{$data->category->title}}</span>
@@ -66,7 +58,29 @@
                                 </div>
                             </div>
                         </form>
+<br>
+                        <h3 class="">REVIEWS</h3>
+                        <hr>
+                        <div class="single-book">
+                            @php
+                                $average = $data->comment->average('rate');
+                            @endphp
+                            <div class="rating">
 
+                                {{number_format($average,0)}}<i class="fa fa-star @if ($average<1) -o empty @endif"></i>
+                            </div>
+                            <a href="#">{{$data->comment->count('id')}}/ Review(s) </a>
+
+                            @foreach($review as $rs)
+
+                                <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
+                                <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}} </a></div>
+                                <p> Rate: {{$rs->rate}}</p>
+                                <strong>{{$rs->review}}</strong>
+                                <hr>
+                            @endforeach
+
+                        </div>
                     </div>
 
 
@@ -93,30 +107,14 @@
 
                        </thead>
                                 </table>
-                        </h5>
-
-                        <h3 class="">REVIEWS</h3>
-                        <hr>
-                        <div class="single-book">
-                            @php
-                                $average = $data->comment->average('rate');
-                            @endphp
-                            <div class="rating">
-
-                                {{number_format($average,0)}}<i class="fa fa-star @if ($average<1) -o empty @endif"></i>
                             </div>
-                            <a href="#">{{$data->comment->count('id')}}/ Review(s) </a>
+                        </h5>
+                        @foreach($images as $rs)
+<hr>
+                            <img src="{{Storage::url($rs->image)}}" href="" class="img img-fluid" style="width: 400px ; height: 400px">
 
-                            @foreach($review as $rs)
+                        @endforeach
 
-                                <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}} </a></div>
-                                <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}} </a></div>
-                                <p> Rate: {{$rs->rate}}</p>
-                                <strong>{{$rs->review}}</strong>
-                                <hr>
-                            @endforeach
-
-                        </div>
                     </div>
                 </div>
             </div>
