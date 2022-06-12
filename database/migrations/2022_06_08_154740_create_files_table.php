@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->integer('user_id');
-            $table->integer('content_id');
-            $table->integer('rate')->default('0');
-            $table->string('review');
-            $table->string('IP')->nullable();
-            $table->string('status',5)->default('New');
+        Schema::create('files', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('content_id');
+            $table->string('title', 100);
+            $table->string('file', 100);
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('files');
     }
 };

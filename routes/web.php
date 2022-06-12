@@ -4,9 +4,11 @@ use App\Http\Controllers\AdminPanel\AdminContentcontroller;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\FileController;
 use App\Http\Controllers\AdminPanel\Imagecontroller;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\Categorycontroller as AdminCategoryController;
@@ -44,6 +46,8 @@ Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
 Route::view('/loginadmin', 'admin.login')->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+Route::get('/uploadnotes', [PageController::class, 'uploadnotes'])->name('uploadnotes');
+Route::post('/storenote', [HomeController::class, 'storenote'])->name('storenote');
 
 //4- route->controller->view
 Route::get('/test', [HomeController::class, 'test'])->name('test');
@@ -56,6 +60,8 @@ Route::post('/save',[HomeController::class, 'save'])->name('save');
 
 Route::get('/content/{id}/',[HomeController::class, 'content'])->name('content');
 Route::get('/categorycontent/{id}/{slug}',[HomeController::class, 'categorycontent'])->name('categorycontent');
+Route::get('/showfile', [HomeController::class, 'showfile'])->name('showfile');
+Route::get('/download/{file}', [HomeController::class, 'download'])->name('download');
 
 
 
@@ -82,6 +88,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/', 'index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
+        Route::get('/uploadnotes', 'uploadnotes')->name('uploadnotes');
     });
 
     //**************BOOKMARK ROUTES**************
@@ -93,6 +100,12 @@ Route::middleware('auth')->group(function (){
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+    });
+
+    //**************PAGE ROUTES**************
+    Route::prefix('/page')->name('page.')->controller(PageController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/uploadnotes', 'uploadnotes')->name('uploadnotes');
     });
 //**************ADMIN PANEL ROUTES**************
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
@@ -128,6 +141,14 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
     //**************ADMIN CONTENT IMAGE GALLERY ROUTES**************
     Route::prefix('/image')->name('image.')->controller(Imagecontroller::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::post('/store/{pid}','store')->name('store');
+        Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
+
+    });
+
+    //**************ADMIN CONTENT FILES ROUTES**************
+    Route::prefix('/file')->name('file.')->controller(FileController::class)->group(function () {
         Route::get('/{pid}', 'index')->name('index');
         Route::post('/store/{pid}','store')->name('store');
         Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');

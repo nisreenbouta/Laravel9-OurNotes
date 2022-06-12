@@ -14,7 +14,7 @@
         </ol>
     </div>
     @foreach($content as $rs)
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="single-book">
 
                 <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 250px">
@@ -24,7 +24,7 @@
                         <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                     </p>
                     <a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                    <a href="" class="btn btn-outline-danger"><i class="fa fa-heart"></i> My list</a>
+
 
                 </div>
             </div>

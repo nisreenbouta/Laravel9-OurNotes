@@ -47,6 +47,7 @@ class BookMarkController extends Controller
         public function store(Request $request)
     {
 
+        $id=$request->id;
         $data=BookMark::where('content_id', $id)->where('user_id', Auth::id())->first();
         if ($data)
         {
@@ -84,6 +85,7 @@ class BookMarkController extends Controller
      */
     public function add($id)
     {
+
 
         $data=BookMark::where('content_id', $id)->where('user_id', Auth::id())->first();
         $data = new BookMark();

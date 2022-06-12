@@ -23,4 +23,6 @@ class Content extends Model
     {
         return $this->hasMany(BookMark::class);
     }
+
+
 }

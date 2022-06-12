@@ -15,10 +15,13 @@
             </ul>
 
 
+            <div class="section">
 
-    <div class="section">
+                <div class="container">
 
-            <div class="container">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
 <h1> About Us</h1>
                 <hr>
                 <br>

@@ -55,7 +55,7 @@
 
 
                                         <div class="form-group">
-                                            <label>Choose Image file</label>
+                                            <label>Choose Image </label>
                                             <input type="file" class="custom-file-input" name="image" >
                                         </div>
 

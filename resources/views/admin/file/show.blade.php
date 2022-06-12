@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Show Content : '. $data->title )
+@section('title', 'Show Category: '. $data->title )
 
 @section('content')
 
@@ -10,15 +10,15 @@
 
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">home</a> </li>
-            <li class="breadcrumb-item active">Show Content</li>
+            <li class="breadcrumb-item active">Show Category</li>
         </ol>
 
         <div id="page-inner">
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('admin.content.edit',['id'=>$data->id])}}"class="btn btn-info ">Edit</a>
-                    <a href="{{route('admin.content.destroy',['id'=>$data->id])}}"onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a>
+                    <a href="{{route('admin.category.edit',['id'=>$data->id])}}"class="btn btn-info ">Edit</a>
+                    <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"onclick="return confirm('DELETING!! ARE YOU SURE??')" class="btn btn-danger ">Delete</a>
 
                     <div class="panel panel-default">
 
@@ -32,14 +32,8 @@
                                             <div class="table-responsive">
                                                 <table class="table table-striped">
                                                     <tr>
-                                                        <th style="width: 200px">Id</th>
+                                                        <th style="width: 150px">Id</th>
                                                         <td>{{$data->id}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Category</th>
-                                                        <td>
-                                                            {{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($data->category, $data->category->title)}}
-                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th>Title</th>
@@ -50,19 +44,8 @@
                                                         <td>{{$data->keyword}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Description</th>
-                                                        <td>{{$data->description}}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th>Detail INFO</th>
-                                                        <td>{!!  $data->detail !!}</td>
-                                                    </tr>
-                                                    <tr>
                                                         <th>Image</th>
-                                                        <td>@if($data->image)
-                                                                <img src="{{Storage::url($data->image)}}" style="height: 100px">
-                                                            @endif</td>
+                                                        <td>{{$data->image}}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>Status</th>

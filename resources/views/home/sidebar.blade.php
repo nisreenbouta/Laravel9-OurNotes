@@ -1,5 +1,8 @@
-    <div class="book-list-sidebar">
-    @php
+
+<div class="col-md-3">
+<div class="book-list-sidebar">
+
+            @php
         $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
        @endphp
 
@@ -8,7 +11,6 @@
                         <h5 class="md-1 border-bottom pb-1">
                              Categories
                         </h5>
-                        <ul class="category-list">
 
         @foreach($mainCategories as $rs)
             <li class="navbar-toggler-icon">
@@ -23,7 +25,7 @@
                                     </li>
 
 
-                            </ul>
+
                               </div>
 
                             </div>
@@ -37,3 +39,5 @@
 
 
 
+  </div>
+  </div>

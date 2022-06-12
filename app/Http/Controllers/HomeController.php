@@ -7,13 +7,15 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Content;
 use App\Models\Faq;
+use App\Models\File;
 use App\Models\Image;
 use App\Models\Meassage;
+use App\Models\Page;
 use App\Models\setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
 
@@ -71,6 +73,7 @@ class HomeController extends Controller
         ]);
     }
 
+
     public function storemessage(Request $request)
     {
         //dd($request);
@@ -85,6 +88,20 @@ class HomeController extends Controller
 
         return redirect()->route('contact')->with('info', 'Your message has been sent, Thank you!. ');
 
+    }
+    public function storenote(Request $request)
+    {
+
+        $data=new Page();
+        $file=$request->file;
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('storage',$filename);
+        $data->file=$filename;
+        $data->name=$request->name;
+        $data->description=$request->description;
+        $data->save();
+
+        return redirect()->back();
     }
 
     public function storecomment(Request $request)
@@ -107,11 +124,27 @@ class HomeController extends Controller
         $images = Image::where('content_id', $id)->get();
         $data= Content::find($id);
         $review =Comment::where('content_id',$id)->where('status', 'True')->get();
+        $file = File::where('content_id', $id)->get();
         return view('home.content',[
             'data'=>$data,
             'images'=>$images,
-            'review' => $review
+            'review' => $review,
+            'file' => $file,
         ]);
+    }
+
+    public function showfile($id)
+    {
+        $data = File::where('content_id', $id)->get();
+        return view('content', [
+            'data' => $data,
+        ]);
+    }
+
+    public function download(Request $request, $file)
+    {
+
+        return response()->download(public_path('storage/'.$file));
     }
 
     public function categorycontent($id)

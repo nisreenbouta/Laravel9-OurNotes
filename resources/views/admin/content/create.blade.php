@@ -75,10 +75,6 @@
                                             <input type="file" class="custom-file-input" name="image">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>Choose file</label>
-                                            <input type="file" class="custom-file-input" name="file">
-                                        </div>
 
                                         <div class="form-group">
                                             <label>Select </label>

@@ -43,10 +43,10 @@
                                         <td>{{\App\Http\Controllers\AdminPanel\Categorycontroller::getParentsTree($rs->category, $rs->category->title?? 'no title')}}</td>
                                         <td>{{$rs->title}}</td>
                                         <td>
-                                            @if($rs->file)
-                                                <img src="{{Storage::url($rs->file)}}" style="height: 40px">
-                                            @endif
-
+                                            <a href="{{route('admin.file.index',['pid'=>$rs->id])}}"
+                                               onclick="return !window.open(this.href, ' ', 'top=50 left=100 width=1000, height=700')">
+                                                <img src="{{asset('adminassets')}}/img/pdf-thumb.png "style="height: 40px">
+                                            </a>
                                         </td>
                                         <td>
                                             @if($rs->image)

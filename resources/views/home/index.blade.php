@@ -17,7 +17,7 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <div class="card card-body single-top-link" onclick="location.href='login.html'">
+                    <div class="card card-body single-top-link" onclick="location.href='/loginuser'">
                         <h4>Sign In</h4>
                         <i class="fa fa-sign-in-alt"></i>
                         <p>
@@ -27,7 +27,7 @@
                 </div> <!-- Single Col -->
 
                 <div class="col-md-3">
-                    <div class="card card-body single-top-link"  onclick="location.href='register.html'">
+                    <div class="card card-body single-top-link"  onclick="location.href='/registeruser'">
                         <h4>Create New</h4>
                         <i class="fa fa-user"></i>
                         <p>
@@ -37,7 +37,7 @@
                 </div> <!-- Single Col -->
 
                 <div class="col-md-3">
-                    <div class="card card-body single-top-link">
+                    <div class="card card-body single-top-link" onclick="location.href='/loginuser'">
                         <h4>Share Notes</h4>
                         <i class="fa fa-cart-plus"></i>
                         <p>
@@ -88,8 +88,8 @@
                             <label for="exampleInputEmail1">Notes Category</label>
                             <select class="form-control">
                                 <option>Select a category</option>
-                                <option>Java Programming</option>
-                                <option>C Programming</option>
+                                <option>php Programming</option>
+                                <option>Materials</option>
                                 <option>C++ Programming</option>
                             </select>
                         </div>
@@ -133,7 +133,7 @@
                                         <a href="" class=""><i class="fa fa-upload"></i> {{$rs->user_id}}</a>
                                     </p>
                                     <a href="{{route('content',['id'=>$rs->id])}}" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View</a>
-                                    <a href="{{route('bookmark.add',['id'=>$rs->id])}}" class="btn btn-outline-warning"><i class="fa fa-bookmark"></i> My BookMarks</a>
+
 
                                 </div>
                             </div>
